@@ -1,0 +1,29 @@
+name: HKEPC Post Monitor
+
+on:
+  schedule:
+    # 每 10 分鐘自動在 GitHub 伺服器跑一次
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # 允許手動點擊測試
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Script
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python hkepc.py
