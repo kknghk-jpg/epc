@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import datetime
 import os
 
-TOKEN = os.environ.get("8897584102:AAEjaAl8XcmhBjP6NFir-2hCnY0omAsRDBI")
-CHAT_ID = os.environ.get("481375516")
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 URL = "https://www.hkepc.com/forum/forumdisplay.php?fid=14"
 HEADERS = {
