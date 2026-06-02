@@ -1,8 +1,9 @@
 import requests
-from bs4 import BeautifulSoup
 import datetime
 import os
+from bs4 import BeautifulSoup
 
+# 🔐 程式碼必須保持這樣！括號內是「箱子的名字」
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
