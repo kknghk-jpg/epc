@@ -1,9 +1,9 @@
 import requests
+from bs4 import BeautifulSoup
 import datetime
 import os
-from bs4 import BeautifulSoup
 
-# 🔐 程式碼必須保持這樣！括號內是「箱子的名字」
+# 🔐 必須保持這樣！這是在告訴 Python 去後台找名為 "TELEGRAM_BOT_TOKEN" 的箱子
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
